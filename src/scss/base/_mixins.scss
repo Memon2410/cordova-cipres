@@ -1,0 +1,83 @@
+/**
+ * Helper mixins
+*/
+
+// Clearfix
+@mixin clearfix {
+  &::after {
+    clear: both;
+    content: '';
+    display: table;
+  }
+}
+
+// Media queries
+// use example: @include respond-to('small')
+$breakpoints: (
+  'tiny': ( min-width: $tiny ),
+  'small':  ( min-width: $small ),
+  'medium': ( min-width: $medium ),
+  'large':  ( min-width: $large )
+) !default;
+
+@mixin respond-to($breakpoint) {
+  // If the key exists in the map
+  @if map-has-key($breakpoints, $breakpoint) {
+    // Prints a media query based on the value
+    @media #{inspect(map-get($breakpoints, $breakpoint))} {
+      @content;
+    }
+  } @else { // If the key doesn't exist in the map
+    @warn 'Unfortunately, no value could be retrieved from `#{$breakpoint}`. '
+    + 'Available breakpoints are: #{map-keys($breakpoints)}.';
+  }
+}
+
+// Text selection
+@mixin text-selection($color-selection, $color-selection-bg) {
+  ::-moz-selection {
+    background: $color-selection-bg;
+    color: $color-selection;
+    text-shadow: none;
+  }
+
+  ::selection {
+    background: $color-selection-bg;
+    color: $color-selection;
+    text-shadow: none;
+  }
+}
+
+$prefixes: 'webkit', 'moz', 'ms', 'o', 'none';
+@mixin prefix($property, $value) {
+  @each $prefix in $prefixes {
+    @if $prefix == 'none' {
+      #{$property}: $value;
+    } @else {
+      -#{$prefix}-#{$property}: $value;
+    }
+  }
+}
+
+@mixin center($width: null, $height: null) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    @if not $width and not $height {
+        transform: translate(-50%, -50%);
+    } @else if $width and $height {
+        width: $width;
+        height: $height;
+        margin: -($width / 2) #{0 0} -($height / 2);
+    } @else if not $height {
+        width: $width;
+        margin-left: -($width / 2);
+        transform: translateY(-50%);        
+    } @else {
+        height: $height;
+        margin-top: -($height / 2);
+        transform: translateX(-50%);                                            
+    }                                   
+}
+

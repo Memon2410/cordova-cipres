@@ -1,0 +1,145 @@
+main {
+    .divider {
+        width: 80%;
+        height: .1rem;
+        max-width: 80rem;
+        position: relative;
+        margin: 4rem auto;
+        opacity: .25;
+        background: $light-gray;
+    }
+
+    .container-titles {
+        position: relative;
+        margin-top: 1rem;
+
+        h1 {
+            font-size: 1.25rem;
+            line-height: 4rem;
+            letter-spacing: 0.05rem;
+            color: $white;
+        }
+    }
+
+    h2 { 
+        font-size: 1rem;
+        line-height: 3rem;
+        letter-spacing: 1.5rem;
+        text-transform: uppercase;
+        color: $light-gray;
+    }
+
+    .container-texts {
+        margin: 2rem auto;
+
+        ul {
+            li {
+                list-style-type: circle;
+                list-style-position: inside;
+                font-size: 1.15rem;
+                line-height: 1.5rem;
+                color: $white;
+            }
+        }
+
+        .item-executive {
+            width: 20rem;
+            height: 20rem;
+            margin: 2rem auto;
+            border: .25rem solid $white;
+            backdrop-filter: blur(.25rem);
+            background: rgba(255, 255, 255, .05);
+
+            p,
+            a {
+                font-size: 1rem;
+                line-height: 2.5rem;
+                padding: 0 1rem;
+                color: $white;
+            }
+
+            p {
+                &:nth-child(1) {
+                    padding-top: 8rem;
+                }
+
+                &:nth-child(2) {
+                    font-size: 1.25rem;
+                }
+            }
+
+            .name {
+                text-transform: uppercase;
+            }
+        }
+    }
+}
+
+@include respond-to('small') {
+    main {
+        .container-titles {
+            margin-top: 2rem;
+
+            h1 {
+                font-size: 1.5rem;
+                line-height: 8rem;
+            } 
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            line-height: 4.5rem;
+            letter-spacing: 2.25rem;
+        }
+    }
+
+    .container-texts {
+        margin: 3rem auto;
+
+        ul {
+            li {
+                font-size: 1.5rem;
+                line-height: 2.25rem; 
+            }
+        }
+
+        .item-executive {
+            display: inline-block;
+            margin: 2rem 2.75rem 2rem 0 !important;
+        }
+    }
+}
+
+@include respond-to('medium') {
+    main {
+        .divider {
+            margin: 7.5rem 0;
+        }
+
+        .container-titles {
+            margin-top: 3rem;
+
+            h1 {
+                font-size: 2rem;
+                line-height: 10rem;
+            } 
+        }
+
+        h2 {
+            font-size: 2rem;
+            line-height: 6rem;
+            letter-spacing: 3rem;
+        }
+
+        .container-texts {
+            margin: 3rem auto;
+
+            ul {
+                li {
+                    font-size: 1.75rem;
+                    line-height: 3rem; 
+                }
+            }
+        }
+    }
+}

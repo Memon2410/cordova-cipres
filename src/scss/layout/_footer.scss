@@ -1,0 +1,35 @@
+footer {
+    height: 8rem;
+    position: relative;
+    margin: 5rem auto; 
+    text-align: center;
+
+    a {
+        font-size: 1.25rem; 
+        color: $white;
+
+        img {
+            width: 1rem;
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 1rem;
+        }
+    }
+
+    p {
+        width: 90%;
+        position: relative;
+        margin: 0 auto;
+        padding: 1rem 0;
+        font-size: 1rem;
+        text-align: center;
+        color: $light-gray;
+    }
+}
+
+@include respond-to('medium') {
+    footer {
+        margin: 12rem auto;
+    }
+}
+

@@ -1,0 +1,54 @@
+:root {
+  font-size: 62.5%;
+}
+
+.no-select {
+  @include prefix(user-select, none);
+}
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+
+body {
+  @include text-selection($white, red);
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  font-family: 'Didact Gothic', sans-serif;
+  background: $gray;
+
+  @supports (display: grid) {
+    display: grid;
+    grid-gap: 0;
+    grid-template-columns: 1fr;
+    grid-template-areas: 'header' 'main' 'footer';
+    grid-template-rows: 8rem 1fr 2rem;
+  }
+
+  header {
+    grid-area: header;
+  }
+
+  main {
+    grid-area: main;
+  }
+
+  footer {
+    grid-area: footer;
+  }
+
+  .content {
+    width: 90%;
+    max-width: 128rem;
+    margin: 0 auto;
+  }
+
+  canvas {
+    opacity: .5;
+  }
+}
+
