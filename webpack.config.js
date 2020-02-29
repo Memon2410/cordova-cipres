@@ -84,13 +84,6 @@ const config = {
     ]),
     new CopyWebpackPlugin([
       {
-        from: path.resolve(__dirname, 'src', 'js', 'vendor'),
-        to: path.resolve(__dirname, 'dist', 'js', 'vendor'),
-        toType: 'dir'
-      }
-    ]),
-    new CopyWebpackPlugin([
-      {
         from: path.resolve(__dirname, 'src', '', 'manifest.json'),
         to: path.resolve(__dirname, 'dist', '', 'manifest.json'),
         toType: 'file'

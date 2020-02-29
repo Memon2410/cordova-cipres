@@ -17,7 +17,7 @@ main {
             font-size: 1.25rem;
             line-height: 4rem;
             letter-spacing: 0.05rem;
-            color: $white;
+            color: $blue;
         }
     }
 
@@ -38,7 +38,7 @@ main {
                 list-style-position: inside;
                 font-size: 1.15rem;
                 line-height: 1.5rem;
-                color: $white;
+                color: $blue;
             }
         }
 
@@ -46,16 +46,15 @@ main {
             width: 20rem;
             height: 20rem;
             margin: 2rem auto;
-            border: .25rem solid $white;
+            border: .25rem solid $gray;
             backdrop-filter: blur(.25rem);
-            background: rgba(255, 255, 255, .05);
 
             p,
             a {
                 font-size: 1rem;
                 line-height: 2.5rem;
                 padding: 0 1rem;
-                color: $white;
+                color: $blue;
             }
 
             p {

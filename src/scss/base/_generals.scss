@@ -14,12 +14,12 @@ html {
 }
 
 body {
-  @include text-selection($white, red);
+  @include text-selection($white, $blue);
   position: relative;
   display: flex;
   flex-wrap: wrap;
   font-family: 'Didact Gothic', sans-serif;
-  background: $gray;
+  background: $white;
 
   @supports (display: grid) {
     display: grid;
@@ -31,6 +31,7 @@ body {
 
   header {
     grid-area: header;
+    background: $yellow;
   }
 
   main {
